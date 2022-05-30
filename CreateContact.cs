@@ -56,7 +56,6 @@ namespace AddressBookProgram
 
         }
 
-
         public void ListPeople()
         {
             if (People.Count == 0)

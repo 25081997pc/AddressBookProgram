@@ -8,10 +8,26 @@
             Console.WriteLine("Welcome to Address Book Program");
 
             CreateContact createContact = new CreateContact();
+           
+            string command = "";
+            while (command != "exit")
+            {
+                Console.Clear();
+                Console.WriteLine("Please enter a command: ");
+                command = Console.ReadLine().ToLower();
 
-            createContact.AddPerson();
+                switch (command)
+                {
+                    case "add":
+                        createContact.AddPerson();
+                        break;
+                    case "list":
+                        createContact.ListPeople();
+                        break;
+                }
+                Console.WriteLine("Enter exit to Program End");
 
-            createContact.ListPeople();
+            }
 
         }
     }

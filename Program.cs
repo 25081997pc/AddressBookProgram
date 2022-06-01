@@ -27,8 +27,11 @@
                     case "edit":
                         createContact.Edit();
                         break;
-                    
+                    case "remove":
+                        createContact.Remove();
+                        break;
                 }
+            }
                 Console.WriteLine("Enter exit to Program End");
 
             }

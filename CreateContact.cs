@@ -135,7 +135,29 @@ namespace AddressBookProgram
                 Console.WriteLine("Address book is Empty");
             }
             
-        } 
-       
+        }
+        public void Remove()
+        {
+            Console.WriteLine("Enter the first name of the person you would like to remove");
+            string FirstName = Console.ReadLine();
+            Person person = People.FirstOrDefault(x => x.FirstName.ToLower() == FirstName.ToLower());
+
+            if (person == null)
+            {
+                Console.WriteLine("That person could not be found.Press any key to continue");
+                Console.ReadKey();
+                return;
+            }
+            Console.WriteLine("Are you sure you want to remove this person from your address book? (Y/N)");
+            PrintPerson(person);
+            if (Console.ReadKey().Key == ConsoleKey.Y)
+            {
+                People.Remove(person);
+                Console.WriteLine("Person Removed.Press any key to continue");
+                Console.ReadKey();
+            }
+        }
+
     }
+
 }

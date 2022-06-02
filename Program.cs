@@ -31,11 +31,10 @@
                         createContact.Remove();
                         break;
                 }
+            
             }
-                Console.WriteLine("Enter exit to Program End");
-
-            }
-
+            Console.WriteLine("Enter exit to Program End");
+           
         }
     }
 }

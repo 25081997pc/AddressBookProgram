@@ -8,6 +8,7 @@ namespace AddressBookProgram
 {
     public class Person
     {
+        public string AddressBookName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
@@ -21,11 +22,12 @@ namespace AddressBookProgram
     public class CreateContact
     {
         public List<Person> People = new List<Person>();
-        
+       
         public void AddPerson()
         {
             Person person = new Person();
-
+            Console.Write("Enter Address Book Name: ");
+            person.AddressBookName = Console.ReadLine();
             Console.Write("Enter First Name: ");
             person.FirstName = Console.ReadLine();
 
@@ -49,6 +51,7 @@ namespace AddressBookProgram
         }
         public void PrintPerson(Person person)
         {
+            Console.WriteLine("Address Book Name: " + person.AddressBookName);
             Console.WriteLine("First Name: " + person.FirstName);
             Console.WriteLine("Last Name: " + person.LastName);
             Console.WriteLine("Phone Number: " + person.PhoneNumber);
